@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\ResetPasswordController;
+use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Slider\SliderController;
 
 /*
@@ -48,6 +49,8 @@ Route::as('admin.')->group(function () {
         })->name('index');
 
         Route::resource('sliders', SliderController::class);
+
+        Route::resource('categories', CategoryController::class);
 
         Route::resource('roles', RoleController::class);
         Route::resource('users', UserController::class);

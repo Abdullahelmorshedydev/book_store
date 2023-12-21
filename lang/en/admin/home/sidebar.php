@@ -8,5 +8,8 @@ return [
     'slider_title' => 'Sliders',
     'slider_all' => 'All Sliders',
     'slider_create' => 'Create New Slider',
+    'category_title' => 'Categories',
+    'category_all' => 'All Categories',
+    'category_create' => 'Create New Category',
 
 ];

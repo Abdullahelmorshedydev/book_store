@@ -65,7 +65,7 @@ class SliderController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/sliders/', $slider->image, $request->image);
         $slider->update($data);
-        toastr()->addSuccess(__('admin/slider/create.success'));
+        toastr()->addSuccess(__('admin/slider/edit.success'));
         return back();
     }
 
@@ -76,7 +76,7 @@ class SliderController extends Controller
     {
         UploadFile::delete('uploads/sliders/', $slider->image);
         $slider->delete();
-        toastr()->addSuccess('Doctor Deleted Successfully');
+        toastr()->addSuccess('Slider Deleted Successfully');
         return back();
     }
 }
