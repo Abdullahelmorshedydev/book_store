@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Slider;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Slider\CreateSliderRequest;
+use App\Http\Requests\Admin\Slider\UpdateSliderRequest;
 use App\Models\Slider;
 use App\Traits\UploadFile;
 use Illuminate\Http\Request;
@@ -53,15 +54,19 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        //
+        return view('admin.slider.edit', compact('slider'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Slider $slider)
+    public function update(UpdateSliderRequest $request, Slider $slider)
     {
-        //
+        $data = $request->validated();
+        $data['image'] = UploadFile::update($request->file('image'), 'uploads/sliders/', $slider->image, $request->image);
+        $slider->update($data);
+        toastr()->addSuccess(__('admin/slider/create.success'));
+        return back();
     }
 
     /**
@@ -69,6 +74,9 @@ class SliderController extends Controller
      */
     public function destroy(Slider $slider)
     {
-        //
+        UploadFile::delete('uploads/sliders/', $slider->image);
+        $slider->delete();
+        toastr()->addSuccess('Doctor Deleted Successfully');
+        return back();
     }
 }
