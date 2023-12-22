@@ -97,6 +97,34 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
+                                    <label for="exampleInputDescription1">
+                                        {{ __('admin/product/create.description_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="description" id="exampleInputDescription1" placeholder="{{ __('admin/product/create.description_place') }}">
+                                        {{ old('description') }}
+                                    </textarea>
+                                </div>
+                                @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputCategoryId1">{{ __('admin/product/create.category_id_label') }}</label>
+                                    <select name="category_id" id="exampleInputCategoryId1" class="form-control">
+                                        <option disabled selected>{{ __('admin/product/create.category_id_place') }}</option>
+                                        @foreach ($categories as $category)
+                                            <option {{ old('category_id') == $category->id ? 'selected' : '' }}
+                                                value="{{ $category->id }}">
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('category_id')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <div class="form-group">
                                     <label for="exampleInputImage1">{{ __('admin/product/create.image_label') }}</label>
                                     <div class="custom-file">
                                         <input class="custom-file-input" name="image" id="customFile" type="file">

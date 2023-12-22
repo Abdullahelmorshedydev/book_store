@@ -60,16 +60,18 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
-                                    <label for="exampleInputOfferPrice1">{{ __('admin/product/edit.offer_price_label') }}</label>
-                                    <input type="number" value="{{ old('offer_price', $product->offer_price) }}" name="offer_price"
-                                        class="form-control" id="exampleInputOfferPrice1"
+                                    <label
+                                        for="exampleInputOfferPrice1">{{ __('admin/product/edit.offer_price_label') }}</label>
+                                    <input type="number" value="{{ old('offer_price', $product->offer_price) }}"
+                                        name="offer_price" class="form-control" id="exampleInputOfferPrice1"
                                         placeholder="{{ __('admin/product/edit.offer_price_place') }}">
                                 </div>
                                 @error('offer_price')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
-                                    <label for="exampleInputQuantity1">{{ __('admin/product/edit.quantity_label') }}</label>
+                                    <label
+                                        for="exampleInputQuantity1">{{ __('admin/product/edit.quantity_label') }}</label>
                                     <input type="number" value="{{ old('quantity', $product->quantity) }}" name="quantity"
                                         class="form-control" id="exampleInputQuantity1"
                                         placeholder="{{ __('admin/product/edit.quantity_place') }}">
@@ -77,7 +79,6 @@
                                 @error('quantity')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
-                                
                                 <div class="form-group">
                                     <label for="exampleInputPages1">{{ __('admin/product/edit.pages_label') }}</label>
                                     <input type="number" value="{{ old('pages', $product->pages) }}" name="pages"
@@ -88,17 +89,46 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
+                                    <label for="exampleInputDescription1">
+                                        {{ __('admin/product/edit.description_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="description" id="exampleInputDescription1" placeholder="{{ __('admin/product/edit.description_place') }}">
+                                        {{ old('description', $product->description) }}
+                                    </textarea>
+                                </div>
+                                @error('description')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
                                     <label for="exampleInputStatus1">{{ __('admin/product/edit.status_label') }}</label>
                                     <select name="status" id="exampleInputStatus1" class="form-control">
                                         <option disabled selected>{{ __('admin/product/edit.status_place') }}</option>
                                         @foreach ($status as $stat)
-                                            <option {{ old('status', $product->status) == $stat ? 'selected' : '' }} value="{{ $stat }}">
+                                            <option {{ old('status', $product->status) == $stat ? 'selected' : '' }}
+                                                value="{{ $stat }}">
                                                 {{ $stat }}
                                             </option>
                                         @endforeach
                                     </select>
                                 </div>
                                 @error('status')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputCategoryId1">{{ __('admin/product/edit.category_id_label') }}</label>
+                                    <select name="category_id" id="exampleInputCategoryId1" class="form-control">
+                                        <option disabled selected>{{ __('admin/product/edit.category_id_place') }}</option>
+                                        @foreach ($categories as $category)
+                                            <option {{ old('category_id', $product->category->id) == $category->id ? 'selected' : '' }}
+                                                value="{{ $category->id }}">
+                                                {{ $category->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('category_id')
                                     <div class="alert alert-danger">
                                         {{ $message }}
                                     </div>

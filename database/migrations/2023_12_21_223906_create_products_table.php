@@ -21,6 +21,9 @@ return new class extends Migration
             $table->decimal('price');
             $table->decimal('offer_price')->nullable();
             $table->enum('status', ['active', 'desactive'])->default('desactive');
+            $table->text('description');
+            $table->integer('sales_count')->default(0);
+            $table->foreignId('category_id')->constrained('categories')->cascadeOnDelete();
             $table->timestamps();
         });
     }

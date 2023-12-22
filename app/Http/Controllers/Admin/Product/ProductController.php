@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Product;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Product\CreateProductRequest;
 use App\Http\Requests\Admin\Product\UpdateProductRequest;
+use App\Models\Category;
 use App\Models\Product;
 use App\Traits\UploadFile;
 use Illuminate\Http\Request;
@@ -26,7 +27,8 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('admin.product.create');
+        $categories = Category::all();
+        return view('admin.product.create', compact('categories'));
     }
 
     /**
@@ -44,6 +46,8 @@ class ProductController extends Controller
             'quantity' => $data['quantity'],
             'pages' => $data['pages'],
             'image' => $data['image'],
+            'description' => $data['description'],
+            'category_id' => $data['category_id'],
         ]);
         toastr()->addSuccess(__('admin/product/create.success'));
         return back();
@@ -54,7 +58,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        return view('admin.product.show', compact('product'));
     }
 
     /**
@@ -63,7 +67,8 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         $status = Product::$status;
-        return view('admin.product.edit', compact('product', 'status'));
+        $categories = Category::all();
+        return view('admin.product.edit', compact('product', 'status', 'categories'));
     }
 
     /**

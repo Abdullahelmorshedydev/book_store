@@ -22,6 +22,10 @@ return [
     'pages_place' => 'Enter Product Pages',
     'status_label' => 'status',
     'status_place' => 'Enter Product status',
+    'description_label' => 'Description',
+    'description_place' => 'Enter Description',
+    'category_id_label' => 'Category',
+    'category_id_place' => 'Enter Category',
     'image_label' => 'Image',
     'name_valid_required' => 'Name is required',
     'name_valid_string' => 'Name should be a string',
@@ -37,6 +41,9 @@ return [
     'image_valid_image' => 'Image type should be image',
     'image_valid_mimetype' => 'Image type should be image',
     'image_valid_mimes' => 'Image extension not supported',
-    'success' => 'Category Updated Successfully',
+    'description_valid_required' => 'Description is required',
+    'category_id_valid_required' => 'Category is required',
+    'category_id_valid_exists' => 'Category not found in our records',
+    'success' => 'Product Updated Successfully',
 
 ];

@@ -33,6 +33,8 @@ class UpdateProductRequest extends FormRequest
             'offer_price' => ['nullable'],
             'status' => [Rule::in($status)],
             'image' => ['image', 'mimetypes:image/png,image/jpg,image/jpeg', 'mimes:png,jpg,jpeg'],
+            'description' => ['required'],
+            'category' => ['required', 'exists:categories,id'],
         ];
     }
 
@@ -51,6 +53,9 @@ class UpdateProductRequest extends FormRequest
             'pages.required' => __('admin/product/edit.pages_valid_required'),
             'quantity.required' => __('admin/product/edit.quantity_valid_required'),
             'price.required' => __('admin/product/edit.price_valid_required'),
+            'description.required' => __('admin/product/create.description_valid_required'),
+            'category_id.required' => __('admin/product/create.category_id_valid_required'),
+            'category_id.exists' => __('admin/product/create.category_id_valid_exists'),
         ];
     }
 }

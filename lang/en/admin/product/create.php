@@ -23,6 +23,10 @@ return [
     'quantity_place' => 'Enter Quantity',
     'pages_label' => 'Pages',
     'pages_place' => 'Enter Pages',
+    'description_label' => 'Description',
+    'description_place' => 'Enter Description',
+    'category_id_label' => 'Category',
+    'category_id_place' => 'Enter Category',
     'name_en_valid_required' => 'Name in english is required',
     'name_en_valid_string' => 'Name in english should be a string',
     'name_en_valid_unique' => 'Name in english in use',
@@ -41,6 +45,9 @@ return [
     'price_valid_required' => 'Price is required',
     'quantity_valid_required' => 'Quantity is required',
     'pages_valid_required' => 'Pages is required',
+    'description_valid_required' => 'Description is required',
+    'category_id_valid_required' => 'Category is required',
+    'category_id_valid_exists' => 'Category not found in our records',
     'success' => 'Product Created Successfully',
 
 ];

@@ -14,5 +14,8 @@ return [
     'product_title' => 'المنتجات',
     'product_all' => 'جميع المنتجات',
     'product_create' => 'انشاء منتج جديد',
+    'branch_title' => 'الفروع',
+    'branch_all' => 'جميع الفروع',
+    'branch_create' => 'انشاء فرع جديد',
 
 ];

@@ -14,5 +14,8 @@ return [
     'product_title' => 'Products',
     'product_all' => 'All Products',
     'product_create' => 'Create New Product',
+    'branch_title' => 'Branches',
+    'branch_all' => 'All Branches',
+    'branch_create' => 'Create New Branch',
 
 ];

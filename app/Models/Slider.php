@@ -19,9 +19,6 @@ class Slider extends Model
 
     public function getImageAttribute($value)
     {
-        if ($value == 'slider.jpg') {
-            return asset('admin/assets/images/' . $value);
-        }
         return asset($this->path . '/' . $value);
     }
 }

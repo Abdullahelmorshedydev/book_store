@@ -25,15 +25,20 @@ class Product extends Model
         'price',
         'offer_price',
         'status',
+        'description',
+        'sales_count',
+        'category_id',
     ];
 
     public static $status = ['active', 'desactive'];
 
     public function getImageAttribute($value)
     {
-        if ($value == 'product.jpg') {
-            return asset('admin/assets/images/' . $value);
-        }
         return asset($this->path . '/' . $value);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 }

@@ -22,6 +22,10 @@ return [
     'pages_place' => 'ادخل صفحات المنتج',
     'status_label' => 'الحالة',
     'status_place' => 'ادخل حالة المنتج',
+    'description_label' => 'الوصف',
+    'description_place' => 'ادخل الوصف',
+    'category_id_label' => 'القسم',
+    'category_id_place' => 'ادخل القسم',
     'image_label' => 'الصورة',
     'name_valid_required' => 'الاسم مطلوب',
     'name_valid_string' => 'الاسم يجب ان يكون نص',
@@ -37,6 +41,9 @@ return [
     'image_valid_image' => 'نوع الصورة غير مدعوم',
     'image_valid_mimetype' => 'نوع الصورة غير مدعوم',
     'image_valid_mimes' => 'امتداد الصورة غير مدعوم',
+    'description_valid_required' => 'الوصف مطلوب',
+    'category_id_valid_required' => 'القسم مطلوب',
+    'category_id_valid_exists' => 'القسم غير موجود فى سجلاتنا',
     'success' => 'تم تعديل المنتج بنجاح',
 
 ];

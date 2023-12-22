@@ -23,6 +23,10 @@ return [
     'quantity_place' => 'ادخل الكمية',
     'pages_label' => 'الصفحات',
     'pages_place' => 'ادخل الصفحات',
+    'description_label' => 'الوصف',
+    'description_place' => 'ادخل الوصف',
+    'category_id_label' => 'القسم',
+    'category_id_place' => 'ادخل القسم',
     'name_en_valid_required' => 'الاسم بالانجليزية مطلوب',
     'name_en_valid_string' => 'الاسم بالانجليزية يجب ان يكون نص',
     'name_en_valid_unique' => 'الاسم بالانجليزية مستخدم',
@@ -41,6 +45,9 @@ return [
     'price_valid_required' => 'السعر مطلوب',
     'quantity_valid_required' => 'الكمية مطلوبة',
     'pages_valid_required' => 'الصفحات مطلوبة',
+    'description_valid_required' => 'الوصف مطلوب',
+    'category_id_valid_required' => 'القسم مطلوب',
+    'category_id_valid_exists' => 'القسم غير موجود فى سجلاتنا',
     'success' => 'تم اضافة المنتج بنجاح',
 
 ];

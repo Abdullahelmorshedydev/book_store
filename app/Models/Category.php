@@ -26,9 +26,11 @@ class Category extends Model
 
     public function getImageAttribute($value)
     {
-        if ($value == 'category.jpg') {
-            return asset('admin/assets/images/' . $value);
-        }
         return asset($this->path . '/' . $value);
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 }

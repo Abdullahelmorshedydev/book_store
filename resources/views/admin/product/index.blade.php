@@ -37,10 +37,6 @@
                                 <th>{{ __('admin/product/index.image') }}</th>
                                 <th>{{ __('admin/product/index.name') }}</th>
                                 <th>{{ __('admin/product/index.author') }}</th>
-                                <th>{{ __('admin/product/index.price') }}</th>
-                                <th>{{ __('admin/product/index.offer_price') }}</th>
-                                <th>{{ __('admin/product/index.quantity') }}</th>
-                                <th>{{ __('admin/product/index.pages') }}</th>
                                 <th>{{ __('admin/product/index.status') }}</th>
                                 <th>{{ __('admin/product/index.actions') }}</th>
                             </tr>
@@ -53,12 +49,8 @@
                                         <img style="width: 50px;" src="{{ $product->image }}"
                                             alt="product_image">
                                     </td>
-                                    <th scope="row">{{ $product->name }}</th>
-                                    <th scope="row">{{ $product->author }}</th>
-                                    <td>{{ $product->price }}</td>
-                                    <td>{{ $product->offer_price }}</td>
-                                    <td>{{ $product->quantity }}</td>
-                                    <td>{{ $product->pages }}</td>
+                                    <th>{{ $product->name }}</th>
+                                    <th>{{ $product->author }}</th>
                                     <td>{{ $product->status }}</td>
                                     <td>
                                         <a href="{{ route('admin.products.show', $product->id) }}"
