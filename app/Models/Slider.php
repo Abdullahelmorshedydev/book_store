@@ -15,7 +15,7 @@ class Slider extends Model
 
     protected $fillable = ['image'];
 
-    protected static $status = ['active', 'desactive'];
+    public static $status = ['active', 'desactive'];
 
     public function getImageAttribute($value)
     {

@@ -50,6 +50,23 @@
                                         </label>
                                     </div>
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputStatus1">{{ __('admin/category/edit.status_label') }}</label>
+                                    <select name="status" id="exampleInputStatus1" class="form-control">
+                                        <option disabled selected>{{ __('admin/category/edit.status_place') }}</option>
+                                        @foreach ($status as $stat)
+                                            <option {{ old('status') == $stat ? 'selected' : '' }}
+                                                value="{{ $stat }}">
+                                                {{ $stat }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('status')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
                                 @error('image')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror

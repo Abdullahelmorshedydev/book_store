@@ -54,7 +54,8 @@ class SliderController extends Controller
      */
     public function edit(Slider $slider)
     {
-        return view('admin.slider.edit', compact('slider'));
+        $status = Slider::$status;
+        return view('admin.slider.edit', compact('slider', 'status'));
     }
 
     /**

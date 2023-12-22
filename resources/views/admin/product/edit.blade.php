@@ -3,15 +3,15 @@
 @section('style')
 @endsection
 
-@section('title', __('admin/category/edit.title'))
+@section('title', __('admin/product/edit.title'))
 
 @section('breadcrumb')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{ __('admin/category/edit.header') }}</h4>
-                <span class="text-muted mt-1 tx-13 ml-2 mb-0">/ {{ __('admin/category/edit.active') }}</span>
+                <h4 class="content-title mb-0 my-auto">{{ __('admin/product/edit.header') }}</h4>
+                <span class="text-muted mt-1 tx-13 ml-2 mb-0">/ {{ __('admin/product/edit.active') }}</span>
             </div>
         </div>
     </div>
@@ -24,29 +24,91 @@
             <div class="card-body">
                 <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
                     <div class="card-header">
-                        <h4 class="card-title mb-1">{{ __('admin/category/edit.title') }}</h4>
+                        <h4 class="card-title mb-1">{{ __('admin/product/edit.title') }}</h4>
                     </div>
                     <div class="card-body pt-0">
-                        <form action="{{ route('admin.categories.update', $category->id) }}" method="POST"
+                        <form action="{{ route('admin.products.update', $product->id) }}" method="POST"
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="">
                                 <div class="form-group">
-                                    <label for="exampleInputName1">{{ __('admin/category/edit.name_label') }}</label>
-                                    <input type="text" value="{{ old('name', $category->name) }}" name="name"
+                                    <label for="exampleInputName1">{{ __('admin/product/edit.name_label') }}</label>
+                                    <input type="text" value="{{ old('name', $product->name) }}" name="name"
                                         class="form-control" id="exampleInputName1"
-                                        placeholder="{{ __('admin/category/edit.name_place') }}">
+                                        placeholder="{{ __('admin/product/edit.name_place') }}">
                                 </div>
                                 @error('name')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
-                                    <label for="exampleInputImage1">{{ __('admin/category/edit.image_label') }}</label>
+                                    <label for="exampleInputAuthor1">{{ __('admin/product/edit.author_label') }}</label>
+                                    <input type="text" value="{{ old('author', $product->author) }}" name="author"
+                                        class="form-control" id="exampleInputAuthor1"
+                                        placeholder="{{ __('admin/product/edit.author_place') }}">
+                                </div>
+                                @error('author')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputPrice1">{{ __('admin/product/edit.price_label') }}</label>
+                                    <input type="number" value="{{ old('price', $product->price) }}" name="price"
+                                        class="form-control" id="exampleInputPrice1"
+                                        placeholder="{{ __('admin/product/edit.price_place') }}">
+                                </div>
+                                @error('price')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputOfferPrice1">{{ __('admin/product/edit.offer_price_label') }}</label>
+                                    <input type="number" value="{{ old('offer_price', $product->offer_price) }}" name="offer_price"
+                                        class="form-control" id="exampleInputOfferPrice1"
+                                        placeholder="{{ __('admin/product/edit.offer_price_place') }}">
+                                </div>
+                                @error('offer_price')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputQuantity1">{{ __('admin/product/edit.quantity_label') }}</label>
+                                    <input type="number" value="{{ old('quantity', $product->quantity) }}" name="quantity"
+                                        class="form-control" id="exampleInputQuantity1"
+                                        placeholder="{{ __('admin/product/edit.quantity_place') }}">
+                                </div>
+                                @error('quantity')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                
+                                <div class="form-group">
+                                    <label for="exampleInputPages1">{{ __('admin/product/edit.pages_label') }}</label>
+                                    <input type="number" value="{{ old('pages', $product->pages) }}" name="pages"
+                                        class="form-control" id="exampleInputPages1"
+                                        placeholder="{{ __('admin/product/edit.pages_place') }}">
+                                </div>
+                                @error('pages')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputStatus1">{{ __('admin/product/edit.status_label') }}</label>
+                                    <select name="status" id="exampleInputStatus1" class="form-control">
+                                        <option disabled selected>{{ __('admin/product/edit.status_place') }}</option>
+                                        @foreach ($status as $stat)
+                                            <option {{ old('status', $product->status) == $stat ? 'selected' : '' }} value="{{ $stat }}">
+                                                {{ $stat }}
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                @error('status')
+                                    <div class="alert alert-danger">
+                                        {{ $message }}
+                                    </div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="exampleInputImage1">{{ __('admin/product/edit.image_label') }}</label>
                                     <div class="custom-file">
                                         <input class="custom-file-input" name="image" id="customFile" type="file">
                                         <label class="custom-file-label" for="customFile">
-                                            {{ __('admin/category/edit.choose_file') }}
+                                            {{ __('admin/product/edit.choose_file') }}
                                         </label>
                                     </div>
                                 </div>
@@ -55,7 +117,7 @@
                                 @enderror
                             </div>
                             <button type="submit" class="btn btn-primary mt-3 mb-0">
-                                {{ __('admin/category/edit.submit') }}
+                                {{ __('admin/product/edit.submit') }}
                             </button>
                         </form>
                     </div>

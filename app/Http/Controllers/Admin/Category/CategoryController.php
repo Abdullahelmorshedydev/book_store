@@ -57,7 +57,8 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.category.edit', compact('category'));
+        $status = Category::$status;
+        return view('admin.category.edit', compact('category', 'status'));
     }
 
     /**

@@ -11,5 +11,8 @@ return [
     'category_title' => 'الاقسام',
     'category_all' => 'جميع الاقسام',
     'category_create' => 'انشاء قسم جديد',
+    'product_title' => 'المنتجات',
+    'product_all' => 'جميع المنتجات',
+    'product_create' => 'انشاء منتج جديد',
 
 ];

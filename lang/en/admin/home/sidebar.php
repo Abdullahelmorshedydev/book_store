@@ -11,5 +11,8 @@ return [
     'category_title' => 'Categories',
     'category_all' => 'All Categories',
     'category_create' => 'Create New Category',
+    'product_title' => 'Products',
+    'product_all' => 'All Products',
+    'product_create' => 'Create New Product',
 
 ];

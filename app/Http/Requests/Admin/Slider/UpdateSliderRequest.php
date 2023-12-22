@@ -2,6 +2,8 @@
 
 namespace App\Http\Requests\Admin\Slider;
 
+use App\Models\Slider;
+use Illuminate\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateSliderRequest extends FormRequest
@@ -21,8 +23,10 @@ class UpdateSliderRequest extends FormRequest
      */
     public function rules(): array
     {
+        $status = Slider::$status;
         return [
             'image' => ['required', 'image', 'mimetypes:image/png,image/jpg,image/jpeg', 'mimes:png,jpg,jpeg'],
+            'status' => [Rule::in($status)],
         ];
     }
 
@@ -33,6 +37,7 @@ class UpdateSliderRequest extends FormRequest
             'image.image' => __('admin/slider/edit.image_valid_image'),
             'image.mimetype' => __('admin/slider/edit.image_valid_mimetype'),
             'image.mimes' => __('admin/slider/edit.image_valid_mimes'),
+            'status.rule' => __('admin/slider/edit.status_valid_rule'),
         ];
     }
 }

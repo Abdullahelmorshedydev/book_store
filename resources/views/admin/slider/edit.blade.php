@@ -32,14 +32,33 @@
                             enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-                            <div class="custom-file">
-                                <input class="custom-file-input" name="image" id="customFile" type="file">
-                                <label class="custom-file-label" for="customFile">
-                                    {{ __('admin/slider/edit.choose_file') }}
-                                </label>
+                            <div class="form-group">
+                                <label for="customFile">{{ __('admin/slider/edit.image_label') }}</label>
+                                <div class="custom-file">
+                                    <input class="custom-file-input" name="image" id="customFile" type="file">
+                                    <label class="custom-file-label" for="customFile">
+                                        {{ __('admin/slider/edit.choose_file') }}
+                                    </label>
+                                </div>
                             </div>
                             @error('image')
                                 <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                            <div class="form-group">
+                                <label for="exampleInputStatus1">{{ __('admin/slider/edit.status_label') }}</label>
+                                <select name="status" id="exampleInputStatus1" class="form-control">
+                                    <option disabled selected>{{ __('admin/slider/edit.status_place') }}</option>
+                                    @foreach ($status as $stat)
+                                        <option {{ old('status') == $stat ? 'selected' : '' }} value="{{ $stat }}">
+                                            {{ $stat }}
+                                        </option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            @error('status')
+                                <div class="alert alert-danger">
+                                    {{ $message }}
+                                </div>
                             @enderror
                             <button type="submit" class="btn btn-primary mt-3 mb-0">
                                 {{ __('admin/slider/edit.submit') }}

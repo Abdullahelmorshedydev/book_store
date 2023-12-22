@@ -11,6 +11,8 @@ return [
     'name_label' => 'Name',
     'name_place' => 'Enter Category Name',
     'image_label' => 'Image',
+    'status_label' => 'Status',
+    'status_place' => 'Choose Status',
     'name_valid_required' => 'Name is required',
     'name_valid_string' => 'Name should be a string',
     'name_valid_unique' => 'Name in use',
@@ -20,6 +22,7 @@ return [
     'image_valid_image' => 'Image type should be image',
     'image_valid_mimetype' => 'Image type should be image',
     'image_valid_mimes' => 'Image extension not supported',
+    'status_valid_rule' => 'status not supported',
     'success' => 'Category Updated Successfully',
 
 ];

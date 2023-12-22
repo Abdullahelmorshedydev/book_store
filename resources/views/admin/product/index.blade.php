@@ -3,15 +3,15 @@
 @section('style')
 @endsection
 
-@section('title', __('admin/category/index.title'))
+@section('title', __('admin/product/index.title'))
 
 @section('breadcrumb')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h4 class="content-title mb-0 my-auto">{{ __('admin/category/index.header') }}</h4>
-                <span class="text-muted mt-1 tx-13 ml-2 mb-0">/ {{ __('admin/category/index.active') }}</span>
+                <h4 class="content-title mb-0 my-auto">{{ __('admin/product/index.header') }}</h4>
+                <span class="text-muted mt-1 tx-13 ml-2 mb-0">/ {{ __('admin/product/index.active') }}</span>
             </div>
         </div>
     </div>
@@ -24,7 +24,7 @@
         <div class="card">
             <div class="card-header pb-0">
                 <div class="d-flex justify-content-between">
-                    <h4 class="card-title mg-b-0">{{ __('admin/category/index.label') }}</h4>
+                    <h4 class="card-title mg-b-0">{{ __('admin/product/index.label') }}</h4>
                     <i class="mdi mdi-dots-horizontal text-gray"></i>
                 </div>
             </div>
@@ -34,36 +34,46 @@
                         <thead>
                             <tr>
                                 <th>#</th>
-                                <th>{{ __('admin/category/index.image') }}</th>
-                                <th>{{ __('admin/category/index.name') }}</th>
-                                <th>{{ __('admin/category/index.status') }}</th>
-                                <th>{{ __('admin/category/index.actions') }}</th>
+                                <th>{{ __('admin/product/index.image') }}</th>
+                                <th>{{ __('admin/product/index.name') }}</th>
+                                <th>{{ __('admin/product/index.author') }}</th>
+                                <th>{{ __('admin/product/index.price') }}</th>
+                                <th>{{ __('admin/product/index.offer_price') }}</th>
+                                <th>{{ __('admin/product/index.quantity') }}</th>
+                                <th>{{ __('admin/product/index.pages') }}</th>
+                                <th>{{ __('admin/product/index.status') }}</th>
+                                <th>{{ __('admin/product/index.actions') }}</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($products as $product)
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>
-                                        <img style="width: 50px;" src="{{ $category->image }}"
-                                            alt="category_image">
+                                        <img style="width: 50px;" src="{{ $product->image }}"
+                                            alt="product_image">
                                     </td>
-                                    <th scope="row">{{ $category->name }}</th>
-                                    <td>{{ $category->status }}</td>
+                                    <th scope="row">{{ $product->name }}</th>
+                                    <th scope="row">{{ $product->author }}</th>
+                                    <td>{{ $product->price }}</td>
+                                    <td>{{ $product->offer_price }}</td>
+                                    <td>{{ $product->quantity }}</td>
+                                    <td>{{ $product->pages }}</td>
+                                    <td>{{ $product->status }}</td>
                                     <td>
-                                        <a href="{{ route('admin.categories.show', $category->id) }}"
+                                        <a href="{{ route('admin.products.show', $product->id) }}"
                                             class="btn btn-secondary">
-                                            {{ __('admin/category/index.show') }}
+                                            {{ __('admin/product/index.show') }}
                                         </a>
-                                        <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-info">
-                                            {{ __('admin/category/index.edit') }}
+                                        <a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-info">
+                                            {{ __('admin/product/index.edit') }}
                                         </a>
                                         <form class="btn btn-danger"
-                                            action="{{ route('admin.categories.destroy', $category->id) }}" method="post">
+                                            action="{{ route('admin.products.destroy', $product->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button class="btn-danger"
-                                                type="submit">{{ __('admin/category/index.delete') }}</button>
+                                                type="submit">{{ __('admin/product/index.delete') }}</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -71,6 +81,7 @@
                         </tbody>
                     </table>
                 </div>
+                {{ $products->links() }}
             </div>
         </div>
     </div>

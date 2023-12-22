@@ -11,6 +11,8 @@ return [
     'name_label' => 'الاسم',
     'name_place' => 'ادخل اسم القسم',
     'image_label' => 'الصورة',
+    'status_label' => 'الحالة',
+    'status_place' => 'اختر الحالة',
     'name_valid_required' => 'الاسم مطلوب',
     'name_valid_string' => 'الاسم يجب ان يكون نص',
     'name_valid_unique' => 'الاسم مستخدم',
@@ -20,6 +22,7 @@ return [
     'image_valid_image' => 'نوع الصورة غير مدعوم',
     'image_valid_mimetype' => 'نوع الصورة غير مدعوم',
     'image_valid_mimes' => 'امتداد الصورة غير مدعوم',
+    'status_valid_rule' => 'الحالة غير مدعومة',
     'success' => 'تم تعديل القسم بنجاح',
 
 ];
