@@ -1,0 +1,35 @@
+<?php 
+
+return [
+
+    'title' => 'Create New Blog',
+    'header' => 'Blogs',
+    'active' => 'Create New Blog',
+    'add_new' => 'Add New Blog',
+    'submit' => 'Create',
+    'title_en_label' => 'Article in english',
+    'title_ar_label' => 'Article in arabic',
+    'title_en_place' => 'Enter Blog Article in english',
+    'title_ar_place' => 'Enter Blog Article in arabic',
+    'article_en_label' => 'Article in english',
+    'article_ar_label' => 'Article in arabic',
+    'article_en_place' => 'Enter Blog Article in english',
+    'article_ar_place' => 'Enter Blog Article in arabic',
+    'image_label' => 'Image',
+    'choose_file' => 'Choose File',
+    'title_en_valid_required' => 'Title in english is required',
+    'title_en_valid_string' => 'Title in english should be a string',
+    'title_en_valid_unique' => 'Title in english in use',
+    'title_ar_valid_required' => 'Title in arabic is required',
+    'title_ar_valid_string' => 'Title in arabic should be a string',
+    'title_ar_valid_unique' => 'Title in arabic in use',
+    'article_en_valid_required' => 'Article in english is required',
+    'article_en_valid_string' => 'Article in english should be a string',
+    'article_ar_valid_required' => 'Article in arabic is required',
+    'article_ar_valid_string' => 'Article in arabic should be a string',
+    'image_valid_image' => 'Image type should be image',
+    'image_valid_mimetype' => 'Image type should be image',
+    'image_valid_mimes' => 'Image extension not supported',
+    'success' => 'Blog Created Successfully',
+
+];

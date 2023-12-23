@@ -78,7 +78,6 @@ class ProductController extends Controller
     {
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/products/', $product->image, $request->image);
-        dd($data['image']);
         $product->update($data);
         toastr()->addSuccess(__('admin/product/edit.success'));
         return back();

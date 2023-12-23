@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\Auth\RegisterController;
 use App\Http\Controllers\Admin\Auth\ResetPasswordController;
+use App\Http\Controllers\Admin\Blog\BlogController;
 use App\Http\Controllers\Admin\Branch\BranchController;
 use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
@@ -57,6 +58,8 @@ Route::as('admin.')->group(function () {
         Route::resource('products', ProductController::class);
 
         Route::resource('branches', BranchController::class);
+
+        Route::resource('blogs', BlogController::class);
 
         Route::resource('roles', RoleController::class);
         Route::resource('users', UserController::class);

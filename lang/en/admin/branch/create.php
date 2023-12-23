@@ -23,8 +23,8 @@ return [
     'name_ar_valid_unique' => 'Name in arabic in use',
     'address_en_valid_required' => 'Address in english is required',
     'address_en_valid_string' => 'Address in english should be a string',
-    'address_valid_required' => 'Address in arabic is required',
-    'address_valid_string' => 'Address in arabic should be a string',
+    'address_ar_valid_required' => 'Address in arabic is required',
+    'address_ar_valid_string' => 'Address in arabic should be a string',
     'success' => 'Branch Created Successfully',
 
 ];

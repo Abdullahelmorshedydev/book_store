@@ -25,7 +25,7 @@ class UpdateProductRequest extends FormRequest
     {
         $status = Product::$status;
         return [
-            'name' => ['required', 'string', 'unique:categories,name'.$this->id, 'min:3', 'max:50'],
+            'name' => ['required', 'string', 'unique:products,name'.$this->id, 'min:3', 'max:50'],
             'author' => ['required'],
             'price' => ['required'],
             'quantity' => ['required'],

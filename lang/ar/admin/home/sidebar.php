@@ -17,5 +17,8 @@ return [
     'branch_title' => 'الفروع',
     'branch_all' => 'جميع الفروع',
     'branch_create' => 'انشاء فرع جديد',
+    'blog_title' => 'المقالات',
+    'blog_all' => 'جميع المقالات',
+    'blog_create' => 'انشاء مقالة جديدة',
 
 ];

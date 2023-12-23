@@ -23,8 +23,8 @@ return [
     'name_ar_valid_unique' => 'الاسم بالعربية مستخدم',
     'address_en_valid_required' => 'العنوان بالانجليزية مطلوب',
     'address_en_valid_string' => 'العنوان بالانجليزية يجب ان يكون نص',
-    'address_valid_required' => 'العنوان بالعربية مطلوب',
-    'address_valid_string' => 'العنوان بالعربية يجب ان يكون نص',
+    'address_ar_valid_required' => 'العنوان بالعربية مطلوب',
+    'address_ar_valid_string' => 'العنوان بالعربية يجب ان يكون نص',
     'success' => 'تم انشاء الفرع بنجاح',
 
 ];
