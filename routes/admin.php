@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\Category\CategoryController;
 use App\Http\Controllers\Admin\Product\ProductController;
 use App\Http\Controllers\Admin\Settings\FilesSettingsController;
 use App\Http\Controllers\Admin\Settings\GeneralSettingsController;
+use App\Http\Controllers\Admin\Settings\LinksSettingsController;
 use App\Http\Controllers\Admin\Slider\SliderController;
 
 /*
@@ -70,6 +71,12 @@ Route::group(['middleware' => 'auth'], function () {
 
             Route::get('/files', 'index')->name('index');
             Route::put('/files', 'update')->name('update');
+        });
+
+        Route::controller(LinksSettingsController::class)->as('links.')->group(function () {
+
+            Route::get('/links', 'index')->name('index');
+            Route::put('/links', 'update')->name('update');
         });
     });
 

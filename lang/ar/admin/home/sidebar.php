@@ -20,5 +20,6 @@ return [
     'settings_title' => 'الاعدادات',
     'general_settings' => 'الاعدادات العامة',
     'files_settings' => 'اعدادات الملفات',
+    'links_settings' => 'اعدادات اللينكات',
 
 ];

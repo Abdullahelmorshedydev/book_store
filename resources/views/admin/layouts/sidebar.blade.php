@@ -3,7 +3,7 @@
 <aside class="app-sidebar sidebar-scroll">
     <div class="main-sidebar-header active">
         <a class="desktop-logo logo-light active" href="{{ route('admin.index') }}">
-            <img src="{{ asset('uploads/settings/'. settings()->get('site_logo')) }}" class="main-logo" alt="logo">
+            <img src="{{ asset('uploads/settings/' . settings()->get('site_logo')) }}" class="main-logo" alt="logo">
         </a>
     </div>
     <div class="main-sidemenu">
@@ -131,6 +131,9 @@
                     </li>
                     <li><a class="slide-item"
                             href="{{ route('admin.settings.files.index') }}">{{ __('admin/home/sidebar.files_settings') }}</a>
+                    </li>
+                    <li><a class="slide-item"
+                            href="{{ route('admin.settings.links.index') }}">{{ __('admin/home/sidebar.links_settings') }}</a>
                     </li>
                 </ul>
             </li>

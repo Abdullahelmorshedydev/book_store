@@ -20,5 +20,6 @@ return [
     'settings_title' => 'Settings',
     'general_settings' => 'General Settings',
     'files_settings' => 'Files Settings',
+    'links_settings' => 'Links Settings',
 
 ];

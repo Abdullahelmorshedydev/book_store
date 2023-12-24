@@ -1,7 +1,6 @@
 @extends('admin.layouts.app')
 
 @section('style')
-    <script src="{{ asset('admin/assets/ckeditor/build/ckeditor.js') }}"></script>
 @endsection
 
 @section('title', __('admin/settings/files/index.title'))
