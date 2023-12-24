@@ -13,8 +13,10 @@
         "laravelcollective/html": "^6.4",
         "mcamara/laravel-localization": "^1.8",
         "php-flasher/flasher-toastr-laravel": "^1.15",
+        "rawilk/laravel-settings": "^3.3",
         "spatie/laravel-permission": "^6.2",
-        "spatie/laravel-translatable": "^6.5"
+        "spatie/laravel-translatable": "^6.5",
+        "tinymce/tinymce": "^6.8"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.9",

@@ -17,8 +17,8 @@ return [
     'branch_title' => 'Branches',
     'branch_all' => 'All Branches',
     'branch_create' => 'Create New Branch',
-    'blog_title' => 'Blogs',
-    'blog_all' => 'All Blogs',
-    'blog_create' => 'Create New Blog',
+    'settings_title' => 'Settings',
+    'general_settings' => 'General Settings',
+    'files_settings' => 'Files Settings',
 
 ];

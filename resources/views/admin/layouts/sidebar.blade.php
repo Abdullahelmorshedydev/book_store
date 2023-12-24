@@ -3,7 +3,7 @@
 <aside class="app-sidebar sidebar-scroll">
     <div class="main-sidebar-header active">
         <a class="desktop-logo logo-light active" href="{{ route('admin.index') }}">
-            <img src="{{ asset('admin/assets/img/brand/logo.png') }}" class="main-logo" alt="logo">
+            <img src="{{ asset('uploads/settings/'. settings()->get('site_logo')) }}" class="main-logo" alt="logo">
         </a>
     </div>
     <div class="main-sidemenu">
@@ -122,15 +122,15 @@
                         <path
                             d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" />
                     </svg>
-                    <span class="side-menu__label">{{ __('admin/home/sidebar.blog_title') }}</span>
+                    <span class="side-menu__label">{{ __('admin/home/sidebar.settings_title') }}</span>
                     <i class="angle fe fe-chevron-down"></i>
                 </a>
                 <ul class="slide-menu">
                     <li><a class="slide-item"
-                            href="{{ route('admin.blogs.index') }}">{{ __('admin/home/sidebar.blog_all') }}</a>
+                            href="{{ route('admin.settings.general.index') }}">{{ __('admin/home/sidebar.general_settings') }}</a>
                     </li>
                     <li><a class="slide-item"
-                            href="{{ route('admin.blogs.create') }}">{{ __('admin/home/sidebar.blog_create') }}</a>
+                            href="{{ route('admin.settings.files.index') }}">{{ __('admin/home/sidebar.files_settings') }}</a>
                     </li>
                 </ul>
             </li>

@@ -37,8 +37,7 @@ class SliderController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::upload($request->file('image'), 'uploads/sliders');
         Slider::create($data);
-        toastr()->addSuccess(__('admin/slider/create.success'));
-        return back();
+        return back()->with('success', __('admin/slider/create.success'));
     }
 
     /**
@@ -66,8 +65,7 @@ class SliderController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/sliders/', $slider->image, $request->image);
         $slider->update($data);
-        toastr()->addSuccess(__('admin/slider/edit.success'));
-        return back();
+        return back()->with('success', __('admin/slider/edit.success'));
     }
 
     /**
@@ -77,7 +75,6 @@ class SliderController extends Controller
     {
         UploadFile::delete('uploads/sliders/', $slider->image);
         $slider->delete();
-        toastr()->addSuccess('Slider Deleted Successfully');
-        return back();
+        return back()->with('success', __('admin/slider/index.success'));
     }
 }

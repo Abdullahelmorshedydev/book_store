@@ -40,8 +40,7 @@ class CategoryController extends Controller
             'name' => ['ar' => $data['name_ar'], 'en' => $data['name_en']],
             'image' => $data['image'],
         ]);
-        toastr()->addSuccess(__('admin/category/create.success'));
-        return back();
+        return back()->with('success', __('admin/category/create.success'));
     }
 
     /**
@@ -69,8 +68,7 @@ class CategoryController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/categories/', $category->image, $request->image);
         $category->update($data);
-        toastr()->addSuccess(__('admin/category/edit.success'));
-        return back();
+        return back()->with('success', __('admin/category/edit.success'));
     }
 
     /**
@@ -80,7 +78,6 @@ class CategoryController extends Controller
     {
         UploadFile::delete('uploads/categories/', $category->image);
         $category->delete();
-        toastr()->addSuccess('Category Deleted Successfully');
-        return back();
+        return back()->with('success', __('admin/category/index.success'));
     }
 }

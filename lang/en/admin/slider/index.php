@@ -12,5 +12,6 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'show' => 'Show',
+    'success' => 'Slider Deleted Successfully',
 
 ];

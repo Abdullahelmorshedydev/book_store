@@ -1,0 +1,35 @@
+<?php 
+
+return [
+
+    'title' => 'Settings',
+    'header' => 'Settings',
+    'active' => 'General Settings',
+    'label' => 'General Settings',
+    'site_name_en_label' => 'Site Name In English',
+    'slogan_en_label' => 'Slogan In English',
+    'who_we_are_en_label' => 'Who We Are In English',
+    'privacy_policy_en_label' => 'Privacy Policy In English',
+    'exchange_and_return_policy_en_label' => 'Exchange And Return Policy In English',
+    'site_name_ar_label' => 'Site Name In Arabic',
+    'slogan_ar_label' => 'Slogan In Arabic',
+    'who_we_are_ar_label' => 'Who We Are In Arabic',
+    'privacy_policy_ar_label' => 'Privacy Policy In Arabic',
+    'exchange_and_return_policy_ar_label' => 'Exchange And Return Policy In Arabic',
+    'need_help_label' => 'Help Centre Email',
+    'phone_label' => 'Phone',
+    'email_label' => 'Email',
+    'address_label' => 'Address',
+    'contact_title_en_label' => 'Contact Us Title In English',
+    'contact_content_en_label' => 'Contact Us Content In English',
+    'contact_title_ar_label' => 'Contact Us Title In Arabic',
+    'contact_content_ar_label' => 'Contact Us Content In Arabic',
+    'submit' => 'Update',
+    'required_valid' => 'field is required',
+    'string_valid' => 'field should be string',
+    'min_valid' => 'minimum characters is 3 character',
+    'email_valid' => 'field should be email',
+    'numeric_valid' => 'field is numbers',
+    'success' => 'General Settings Updated Successfully',
+
+];

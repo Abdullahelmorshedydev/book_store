@@ -14,5 +14,6 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'show' => 'Show',
+    'success' => 'Product Deleted Successfully',
 
 ];

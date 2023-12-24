@@ -49,8 +49,7 @@ class ProductController extends Controller
             'description' => $data['description'],
             'category_id' => $data['category_id'],
         ]);
-        toastr()->addSuccess(__('admin/product/create.success'));
-        return back();
+        return back()->with('success', __('admin/product/create.success'));
     }
 
     /**
@@ -79,8 +78,7 @@ class ProductController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/products/', $product->image, $request->image);
         $product->update($data);
-        toastr()->addSuccess(__('admin/product/edit.success'));
-        return back();
+        return back()->with('success', __('admin/product/edit.success'));
     }
 
     /**
@@ -90,7 +88,6 @@ class ProductController extends Controller
     {
         UploadFile::delete('uploads/products/', $product->image);
         $product->delete();
-        toastr()->addSuccess('Product Deleted Successfully');
-        return back();
+        return back()->with('success', __('admin/product/index.success'));
     }
 }

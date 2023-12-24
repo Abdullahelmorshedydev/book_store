@@ -13,5 +13,6 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'show' => 'Show',
+    'success' => 'Category Deleted Successfully',
 
 ];

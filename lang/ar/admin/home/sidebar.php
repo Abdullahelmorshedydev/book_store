@@ -17,8 +17,8 @@ return [
     'branch_title' => 'الفروع',
     'branch_all' => 'جميع الفروع',
     'branch_create' => 'انشاء فرع جديد',
-    'blog_title' => 'المقالات',
-    'blog_all' => 'جميع المقالات',
-    'blog_create' => 'انشاء مقالة جديدة',
+    'settings_title' => 'الاعدادات',
+    'general_settings' => 'الاعدادات العامة',
+    'files_settings' => 'اعدادات الملفات',
 
 ];

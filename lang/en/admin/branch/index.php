@@ -13,5 +13,6 @@ return [
     'edit' => 'Edit',
     'delete' => 'Delete',
     'show' => 'Show',
+    'success' => 'Branch Deleted Successfully',
 
 ];

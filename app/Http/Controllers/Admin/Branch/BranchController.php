@@ -36,8 +36,7 @@ class BranchController extends Controller
             'name' => ['ar' => $request->name_ar, 'en' => $request->name_en],
             'address' => ['ar' => $request->address_ar, 'en' => $request->address_en],
         ]);
-        toastr()->addSuccess(__('admin/branch/create.success'));
-        return back();
+        return back()->with('success', __('admin/branch/create.success'));
     }
 
     /**
@@ -63,8 +62,7 @@ class BranchController extends Controller
     public function update(UpdateBranchRequest $request, Branch $branch)
     {
         $branch->update([$request->validated()]);
-        toastr()->addSuccess(__('admin/branch/edit.success'));
-        return back();
+        return back()->with('success', __('admin/branch/edit.success'));
     }
 
     /**
@@ -73,7 +71,6 @@ class BranchController extends Controller
     public function destroy(Branch $branch)
     {
         $branch->delete($branch);
-        toastr()->addSuccess('Branch Deleted Successfully');
-        return back();
+        return back()->with('success', __('admin/branch/index.success'));
     }
 }

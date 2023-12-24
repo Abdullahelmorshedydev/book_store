@@ -1,0 +1,35 @@
+<?php 
+
+return [
+
+    'title' => 'الاعدادات',
+    'header' => 'الاعدادات',
+    'active' => 'الاعدادات العامة',
+    'label' => 'الاعدادات العامة',
+    'site_name_en_label' => 'اسم الموقع بالانجليزية',
+    'slogan_en_label' => 'الشعار بالانجليزية',
+    'who_we_are_en_label' => 'من نحن بالانجليزية',
+    'privacy_policy_en_label' => 'سياسة الخصوصية بالانجليزية',
+    'exchange_and_return_policy_en_label' => 'سياسة الاستبدال و الاسترجاع بالانجليزية',
+    'site_name_ar_label' => 'اسم الموقع بالعربية',
+    'slogan_ar_label' => 'الشعار بالعربية',
+    'who_we_are_ar_label' => 'من نحن بالعربية',
+    'privacy_policy_ar_label' => 'سياسة الخصوصية بالعربية',
+    'exchange_and_return_policy_ar_label' => 'سياسة الاستبدال و الاسترجاع بالعربية',
+    'need_help_label' => 'ايميل المساعدة',
+    'phone_label' => 'الهاتف',
+    'email_label' => 'الايميل',
+    'address_label' => 'العنوان',
+    'contact_title_en_label' => 'عنوان تواصل معنا بالانجليزية',
+    'contact_content_en_label' => 'محتوى تواصل معنا بالانجليزية',
+    'contact_title_ar_label' => 'عنوان تواصل معنا بالعربية',
+    'contact_content_ar_label' => 'محتوى تواصل معنا بالعربية',
+    'submit' => 'تعديل',
+    'required_valid' => 'الحقل مطلوب',
+    'string_valid' => 'الحقل يجب ان يكون نص',
+    'min_valid' => 'اقل عدد احرف مسموح به 3 احرف',
+    'email_valid' => 'الحقل يجب ان يكون ايميل',
+    'numeric_valid' => 'الحقل ارقام',
+    'success' => 'تم تعديل الاعدادات العامة بنجاح',
+
+];
