@@ -36,6 +36,7 @@ class SliderController extends Controller
     {
         $data = $request->validated();
         $data['image'] = UploadFile::upload($request->file('image'), 'uploads/sliders');
+        // dd($data['image']);
         Slider::create($data);
         return back()->with('success', __('admin/slider/create.success'));
     }
@@ -65,7 +66,7 @@ class SliderController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/sliders/', $slider->image, $request->image);
         $slider->update($data);
-        return back()->with('success', __('admin/slider/edit.success'));
+        return redirect()->route('admin.sliders.index')->with('success', __('admin/slider/edit.success'));
     }
 
     /**

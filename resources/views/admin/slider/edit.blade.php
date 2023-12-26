@@ -49,7 +49,8 @@
                                 <select name="status" id="exampleInputStatus1" class="form-control">
                                     <option disabled selected>{{ __('admin/slider/edit.status_place') }}</option>
                                     @foreach ($status as $stat)
-                                        <option {{ old('status') == $stat ? 'selected' : '' }} value="{{ $stat }}">
+                                        <option {{ old('status', $slider->status) == $stat ? 'selected' : '' }}
+                                            value="{{ $stat }}">
                                             {{ $stat }}
                                         </option>
                                     @endforeach

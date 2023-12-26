@@ -12,11 +12,13 @@ trait UploadFile
         return $imageName;
     }
 
-    public static function update($input, $path, $lastName, $data)
+    public static function update($input, $path, $lastName = null, $data)
     {
         if (isset($data)) {
             $data = self::upload($input, $path);
-            self::delete($path, $lastName);
+            if ($lastName != null) {
+                self::delete($path, $lastName);
+            }
             return $data;
         }
         return $lastName;

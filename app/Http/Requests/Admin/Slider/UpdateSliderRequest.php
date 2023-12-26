@@ -25,7 +25,7 @@ class UpdateSliderRequest extends FormRequest
     {
         $status = Slider::$status;
         return [
-            'image' => ['required', 'image', 'mimetypes:image/png,image/jpg,image/jpeg', 'mimes:png,jpg,jpeg'],
+            'image' => ['image', 'mimetypes:image/png,image/jpg,image/jpeg', 'mimes:png,jpg,jpeg'],
             'status' => [Rule::in($status)],
         ];
     }
@@ -33,7 +33,6 @@ class UpdateSliderRequest extends FormRequest
     public function messages()
     {
         return [
-            'image.required' => __('admin/slider/edit.image_valid_required'),
             'image.image' => __('admin/slider/edit.image_valid_image'),
             'image.mimetype' => __('admin/slider/edit.image_valid_mimetype'),
             'image.mimes' => __('admin/slider/edit.image_valid_mimes'),

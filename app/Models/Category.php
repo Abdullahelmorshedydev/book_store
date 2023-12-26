@@ -10,8 +10,6 @@ class Category extends Model
 {
     use HasFactory, HasTranslations;
 
-    public $path = 'uploads/categories';
-
     protected $table = 'categories';
 
     public $translatable = ['name'];
@@ -23,11 +21,6 @@ class Category extends Model
     ];
 
     public static $status = ['active', 'desactive'];
-
-    public function getImageAttribute($value)
-    {
-        return asset($this->path . '/' . $value);
-    }
 
     public function products()
     {

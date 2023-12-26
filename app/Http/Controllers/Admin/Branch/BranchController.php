@@ -61,8 +61,12 @@ class BranchController extends Controller
      */
     public function update(UpdateBranchRequest $request, Branch $branch)
     {
-        $branch->update([$request->validated()]);
-        return back()->with('success', __('admin/branch/edit.success'));
+        $branch->update([
+            'name' => $request->name,
+            'address' => $request->address,
+            'status' => $request->status,
+        ]); 
+        return redirect()->route('admin.branches.index')->with('success', __('admin/branch/edit.success'));
     }
 
     /**

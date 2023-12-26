@@ -45,7 +45,9 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>
-                                        <img style="width: 50px;" src="{{ $category->image }}" alt="category_image">
+                                        <img style="width: 50px;"
+                                            src="{{ asset('uploads/categories/' . $category->image) }}"
+                                            alt="category_image">
                                     </td>
                                     <th scope="row">{{ $category->name }}</th>
                                     <td>{{ $category->status }}</td>

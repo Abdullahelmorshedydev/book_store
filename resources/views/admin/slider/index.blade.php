@@ -44,8 +44,8 @@
                                 <tr>
                                     <th scope="row">{{ $loop->iteration }}</th>
                                     <td>
-                                        <img style="width: 50px;border-radius:50%;" src="{{ $slider->image }}"
-                                            alt="slider_image">
+                                        <img style="width: 50px;border-radius:50%;"
+                                            src="{{ asset('uploads/sliders/' . $slider->image) }}" alt="slider_image">
                                     </td>
                                     <td>{{ $slider->status }}</td>
                                     <td>
@@ -55,10 +55,12 @@
                                         <a href="{{ route('admin.sliders.edit', $slider->id) }}" class="btn btn-info">
                                             {{ __('admin/slider/index.edit') }}
                                         </a>
-                                        <form class="btn btn-danger" action="{{ route('admin.sliders.destroy', $slider->id) }}" method="post">
+                                        <form class="btn btn-danger"
+                                            action="{{ route('admin.sliders.destroy', $slider->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button class="btn-danger" type="submit">{{ __('admin/slider/index.delete') }}</button>
+                                            <button class="btn-danger"
+                                                type="submit">{{ __('admin/slider/index.delete') }}</button>
                                         </form>
                                     </td>
                                 </tr>

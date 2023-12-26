@@ -45,6 +45,43 @@
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
+                                    <label for="customFile">{{ __('admin/settings/files/index.site_goals_label') }}</label>
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" name="site_goals" id="customFile" type="file">
+                                        <label class="custom-file-label" for="customFile">
+                                            {{ __('admin/settings/files/index.choose_file') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('site_goals')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                
+                                <div class="form-group">
+                                    <label for="customFile">{{ __('admin/settings/files/index.quality_assurance_label') }}</label>
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" name="quality_assurance" id="customFile" type="file">
+                                        <label class="custom-file-label" for="customFile">
+                                            {{ __('admin/settings/files/index.choose_file') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('quality_assurance')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="customFile">{{ __('admin/settings/files/index.shipping_slogan_label') }}</label>
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" name="shipping_slogan" id="customFile" type="file">
+                                        <label class="custom-file-label" for="customFile">
+                                            {{ __('admin/settings/files/index.choose_file') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('shipping_slogan')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
                                     <label for="customFile">{{ __('admin/settings/files/index.contact_label') }}</label>
                                     <div class="custom-file">
                                         <input class="custom-file-input" name="contact" id="customFile" type="file">
@@ -70,6 +107,30 @@
                                     </div>
                                 </div>
                                 @error('favicon')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="customFile">{{ __('admin/settings/files/index.technical_support_label') }}</label>
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" name="technical_support" id="customFile" type="file">
+                                        <label class="custom-file-label" for="customFile">
+                                            {{ __('admin/settings/files/index.choose_file') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('technical_support')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="customFile">{{ __('admin/settings/files/index.easy_exchange_label') }}</label>
+                                    <div class="custom-file">
+                                        <input class="custom-file-input" name="easy_exchange" id="customFile" type="file">
+                                        <label class="custom-file-label" for="customFile">
+                                            {{ __('admin/settings/files/index.choose_file') }}
+                                        </label>
+                                    </div>
+                                </div>
+                                @error('easy_exchange')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">

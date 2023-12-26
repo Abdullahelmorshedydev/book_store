@@ -19,8 +19,10 @@ class RegisterController extends Controller
 
     public function store(RegisterRequest $request)
     {
-        $user = User::create($request->validated());
+        $data = $request->validated();
+        $data['is_admin'] = true;
+        $user = User::create($data);
         Auth::login($user);
-        return redirect(RouteServiceProvider::ADMIN);
+        return redirect(app()->currentLocale() . RouteServiceProvider::ADMIN);
     }
 }

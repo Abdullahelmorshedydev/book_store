@@ -2,9 +2,13 @@
 
 namespace App\Http\Requests\Admin\Branch;
 
+use Exception;
 use App\Models\Branch;
 use Illuminate\Validation\Rule;
+use Illuminate\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class UpdateBranchRequest extends FormRequest
 {
@@ -25,10 +29,8 @@ class UpdateBranchRequest extends FormRequest
     {
         $status = Branch::$status;
         return [
-            'name_en' => ['required', 'string', 'unique:branches,name' . $this->id],
-            'name_ar' => ['required', 'string', 'unique:branches,name' . $this->id],
-            'address_en' => ['required', 'string'],
-            'address_ar' => ['required', 'string'],
+            'name' => ['required', 'string', 'unique:branches,name' . $this->id],
+            'address' => ['required', 'string'],
             'status' => [Rule::in($status)],
         ];
     }

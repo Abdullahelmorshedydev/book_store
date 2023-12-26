@@ -9,16 +9,9 @@ class Slider extends Model
 {
     use HasFactory;
 
-    public $path = 'uploads/sliders';
-
     protected $table = 'sliders';
 
     protected $fillable = ['image'];
 
     public static $status = ['active', 'desactive'];
-
-    public function getImageAttribute($value)
-    {
-        return asset($this->path . '/' . $value);
-    }
 }

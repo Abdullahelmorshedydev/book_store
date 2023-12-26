@@ -57,7 +57,8 @@
                                     <label for="slogan_en">
                                         {{ __('admin/settings/general/index.slogan_en_label') }}
                                     </label>
-                                    <input type="text" value="{{ old('slogan_en', settings()->get('slogan_en')) }}"
+                                    <input type="text"
+                                        value="{{ old('slogan_en', settings()->get('slogan_en')) }}"
                                         name="slogan_en" class="form-control" id="slogan_en">
                                 </div>
                                 @error('slogan_en')
@@ -67,17 +68,152 @@
                                     <label for="slogan_ar">
                                         {{ __('admin/settings/general/index.slogan_ar_label') }}
                                     </label>
-                                    <input type="text" value="{{ old('slogan_ar', settings()->get('slogan_ar')) }}"
+                                    <input type="text"
+                                        value="{{ old('slogan_ar', settings()->get('slogan_ar')) }}"
                                         name="slogan_ar" class="form-control" id="slogan_ar">
                                 </div>
                                 @error('slogan_ar')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
                                 <div class="form-group">
+                                    <label for="site_goals_en">
+                                        {{ __('admin/settings/general/index.site_goals_en_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="site_goals_en" id="editor11">
+                                        {!! old('site_goals_en', settings()->get('site_goals_en')) !!}
+                                    </textarea>
+                                </div>
+                                @error('site_goals_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="site_goals_ar">
+                                        {{ __('admin/settings/general/index.site_goals_ar_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="site_goals_ar" id="editor12">
+                                        {!! old('site_goals_ar', settings()->get('site_goals_ar')) !!}
+                                    </textarea>
+                                </div>
+                                @error('site_goals_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="site_view_en">
+                                        {{ __('admin/settings/general/index.site_view_en_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="site_view_en" id="editor13">
+                                        {!! old('site_view_en', settings()->get('site_view_en')) !!}
+                                    </textarea>
+                                </div>
+                                @error('site_view_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="site_view_ar">
+                                        {{ __('admin/settings/general/index.site_view_ar_label') }}
+                                    </label>
+                                    <textarea class="form-control" name="site_view_ar" id="editor14">
+                                        {!! old('site_view_ar', settings()->get('site_view_ar')) !!}
+                                    </textarea>
+                                </div>
+                                @error('site_view_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="shipping_slogan_en">
+                                        {{ __('admin/settings/general/index.shipping_slogan_en_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('shipping_slogan_en', settings()->get('shipping_slogan_en')) }}"
+                                        name="shipping_slogan_en" class="form-control" id="shipping_slogan_en">
+                                </div>
+                                @error('shipping_slogan_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="shipping_slogan_ar">
+                                        {{ __('admin/settings/general/index.shipping_slogan_ar_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('shipping_slogan_ar', settings()->get('shipping_slogan_ar')) }}"
+                                        name="shipping_slogan_ar" class="form-control" id="shipping_slogan_ar">
+                                </div>
+                                @error('shipping_slogan_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="quality_assurance_en">
+                                        {{ __('admin/settings/general/index.quality_assurance_en_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('quality_assurance_en', settings()->get('quality_assurance_en')) }}"
+                                        name="quality_assurance_en" class="form-control" id="quality_assurance_en">
+                                </div>
+                                @error('quality_assurance_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="quality_assurance_ar">
+                                        {{ __('admin/settings/general/index.quality_assurance_ar_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('quality_assurance_ar', settings()->get('quality_assurance_ar')) }}"
+                                        name="quality_assurance_ar" class="form-control" id="quality_assurance_ar">
+                                </div>
+                                @error('quality_assurance_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="technical_support_en">
+                                        {{ __('admin/settings/general/index.technical_support_en_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('technical_support_en', settings()->get('technical_support_en')) }}"
+                                        name="technical_support_en" class="form-control" id="technical_support_en">
+                                </div>
+                                @error('technical_support_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="technical_support_ar">
+                                        {{ __('admin/settings/general/index.technical_support_ar_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('technical_support_ar', settings()->get('technical_support_ar')) }}"
+                                        name="technical_support_ar" class="form-control" id="technical_support_ar">
+                                </div>
+                                @error('technical_support_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="easy_exchange_en">
+                                        {{ __('admin/settings/general/index.easy_exchange_en_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('easy_exchange_en', settings()->get('easy_exchange_en')) }}"
+                                        name="easy_exchange_en" class="form-control" id="easy_exchange_en">
+                                </div>
+                                @error('easy_exchange_en')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
+                                    <label for="easy_exchange_ar">
+                                        {{ __('admin/settings/general/index.easy_exchange_ar_label') }}
+                                    </label>
+                                    <input type="text"
+                                        value="{{ old('easy_exchange_ar', settings()->get('easy_exchange_ar')) }}"
+                                        name="easy_exchange_ar" class="form-control" id="easy_exchange_ar">
+                                </div>
+                                @error('easy_exchange_ar')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                                <div class="form-group">
                                     <label for="who_we_are_en">
                                         {{ __('admin/settings/general/index.who_we_are_en_label') }}
                                     </label>
-                                    <textarea class="form-control" name="who_we_are_en" id="editor1">{!! old('who_we_are_en', settings()->get('who_we_are_en')) !!}</textarea>
+                                    <textarea class="form-control" name="who_we_are_en" id="editor1">
+                                        {!! old('who_we_are_en', settings()->get('who_we_are_en')) !!}
+                                    </textarea>
                                 </div>
                                 @error('who_we_are_en')
                                     <div class="text-danger">{{ $message }}</div>
@@ -86,7 +222,9 @@
                                     <label for="who_we_are_ar">
                                         {{ __('admin/settings/general/index.who_we_are_ar_label') }}
                                     </label>
-                                    <textarea class="form-control" name="who_we_are_ar" id="editor2">{!! old('who_we_are_ar', settings()->get('who_we_are_ar')) !!}</textarea>
+                                    <textarea class="form-control" name="who_we_are_ar" id="editor2">
+                                        {!! old('who_we_are_ar', settings()->get('who_we_are_ar')) !!}
+                                    </textarea>
                                 </div>
                                 @error('who_we_are_ar')
                                     <div class="text-danger">{{ $message }}</div>
@@ -95,7 +233,9 @@
                                     <label for="privacy_policy_en">
                                         {{ __('admin/settings/general/index.privacy_policy_en_label') }}
                                     </label>
-                                    <textarea class="form-control" name="privacy_policy_en" id="editor3">{!! old('privacy_policy_en', settings()->get('privacy_policy_en')) !!}</textarea>
+                                    <textarea class="form-control" name="privacy_policy_en" id="editor3">
+                                        {!! old('privacy_policy_en', settings()->get('privacy_policy_en')) !!}
+                                    </textarea>
                                 </div>
                                 @error('privacy_policy_en')
                                     <div class="text-danger">{{ $message }}</div>
@@ -104,7 +244,9 @@
                                     <label for="privacy_policy_ar">
                                         {{ __('admin/settings/general/index.privacy_policy_ar_label') }}
                                     </label>
-                                    <textarea class="form-control" name="privacy_policy_ar" id="editor4">{!! old('privacy_policy_ar', settings()->get('privacy_policy_ar')) !!}</textarea>
+                                    <textarea class="form-control" name="privacy_policy_ar" id="editor4">
+                                        {!! old('privacy_policy_ar', settings()->get('privacy_policy_ar')) !!}
+                                    </textarea>
                                 </div>
                                 @error('privacy_policy_ar')
                                     <div class="text-danger">{{ $message }}</div>
@@ -289,18 +431,41 @@
             .catch(error => {
                 console.error(error);
             });
+
+        ClassicEditor
+            .create(document.querySelector('#editor11'))
+            .catch(error => {
+                console.error(error);
+            });
+
+        ClassicEditor
+            .create(document.querySelector('#editor12'))
+            .catch(error => {
+                console.error(error);
+            });
+
+        ClassicEditor
+            .create(document.querySelector('#editor13'))
+            .catch(error => {
+                console.error(error);
+            });
+
+        ClassicEditor
+            .create(document.querySelector('#editor14'))
+            .catch(error => {
+                console.error(error);
+            });
+
+        ClassicEditor
+            .create(document.querySelector('#editor15'))
+            .catch(error => {
+                console.error(error);
+            });
+
+        ClassicEditor
+            .create(document.querySelector('#editor16'))
+            .catch(error => {
+                console.error(error);
+            });
     </script>
 @endsection
-
-{{-- <div class="form-group">
-    <label for="customFile">Image</label>
-    <div class="custom-file">
-        <input class="custom-file-input" name="image" id="customFile" type="file">
-        <label class="custom-file-label" for="customFile">
-            {{ __('admin/settings/general/index.choose_file') }}
-        </label>
-    </div>
-</div>
-@error('image')
-    <div class="text-danger">{{ $message }}</div>
-@enderror --}}

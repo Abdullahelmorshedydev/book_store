@@ -66,9 +66,10 @@
                                         id="exampleInputPages1" disabled>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputSalesCount1">{{ __('admin/product/show.sales_count_label') }}</label>
-                                    <input type="number" value="{{ $product->sales_count }}" name="sales_count" class="form-control"
-                                        id="exampleInputSalesCount1" disabled>
+                                    <label
+                                        for="exampleInputSalesCount1">{{ __('admin/product/show.sales_count_label') }}</label>
+                                    <input type="number" value="{{ $product->sales_count }}" name="sales_count"
+                                        class="form-control" id="exampleInputSalesCount1" disabled>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputStatus1">{{ __('admin/product/show.status_label') }}</label>
@@ -90,7 +91,8 @@
                                     <label for="exampleInputImage1">{{ __('admin/product/show.image_label') }}</label>
                                     <div class="custom-file">
                                         <input class="custom-file-input" name="image" id="customFile" type="file">
-                                        <img height="50px" width="100px" src="{{ $product->image }}" alt="product_image">
+                                        <img height="50px" width="100px"
+                                            src="{{ asset('uploads/products/' . $product->image) }}" alt="product_image">
                                     </div>
                                 </div>
                             </div>

@@ -77,8 +77,9 @@ class ProductController extends Controller
     {
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/products/', $product->image, $request->image);
+        dd($data);
         $product->update($data);
-        return back()->with('success', __('admin/product/edit.success'));
+        return redirect()->route('admin.products.index')->with('success', __('admin/product/edit.success'));
     }
 
     /**

@@ -68,7 +68,7 @@ class CategoryController extends Controller
         $data = $request->validated();
         $data['image'] = UploadFile::update($request->file('image'), 'uploads/categories/', $category->image, $request->image);
         $category->update($data);
-        return back()->with('success', __('admin/category/edit.success'));
+        return redirect()->route('admin.categories.index')->with('success', __('admin/category/edit.success'));
     }
 
     /**

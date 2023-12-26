@@ -55,7 +55,7 @@
                                     <select name="status" id="exampleInputStatus1" class="form-control">
                                         <option disabled selected>{{ __('admin/category/edit.status_place') }}</option>
                                         @foreach ($status as $stat)
-                                            <option {{ old('status') == $stat ? 'selected' : '' }}
+                                            <option {{ old('status', $category->status) == $stat ? 'selected' : '' }}
                                                 value="{{ $stat }}">
                                                 {{ $stat }}
                                             </option>
