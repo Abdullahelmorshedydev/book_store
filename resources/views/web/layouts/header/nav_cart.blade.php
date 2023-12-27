@@ -7,30 +7,51 @@
         </button>
     </div>
     <div class="nav__categories-body offcanvas-body pt-4">
-        <p>{{ __('web/nav.no_product') }}</p>
-        <div class="cart-products">
-            <ul class="nav__list list-unstyled">
-                <li class="cart-products__item d-flex justify-content-between gap-2">
-                    <div class="d-flex gap-2">
-                        <div>
-                            <button class="cart-products__remove">x</button>
-                        </div>
-                        <div>
-                            <p class="cart-products__name m-0 fw-bolder">Flutter Apprentice</p>
-                            <p class="cart-products__price m-0">1 x 350.00 {{ __('web/home.pound') }}</p>
-                        </div>
+        @if (!empty($cart))
+            @if (isset($products))
+                <div class="cart-products">
+                    <ul class="nav__list list-unstyled">
+                        @foreach ($products as $product)
+                            <li class="cart-products__item d-flex justify-content-between gap-2">
+                                <div class="d-flex gap-2">
+                                    <div>
+                                        <form action="{{ route('cart.delete.item', $product->id) }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="cart-products__remove">x</button>
+                                        </form>
+                                    </div>
+                                    <div>
+                                        <p class="cart-products__name m-0 fw-bolder">{{ $product->name }}</p>
+                                        <p class="cart-products__price m-0">1 x {{ $product->price }}
+                                            {{ __('web/home.pound') }}</p>
+                                    </div>
+                                </div>
+                                <div class="cart-products__img">
+                                    <img class="w-100" src="{{ asset('uploads/products/' . $product->image) }}"
+                                        alt="">
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                    <div class="d-flex justify-content-between">
+                        <p class="fw-bolder">{{ __('web/nav.total') }}:</p>
+                        <p>{{ $cart->total }} {{ __('web/home.pound') }}</p>
                     </div>
-                    <div class="cart-products__img">
-                        <img class="w-100" src="{{ asset('web/assets/images/product-1.png') }}" alt="">
-                    </div>
-                </li>
-            </ul>
-            <div class="d-flex justify-content-between">
-                <p class="fw-bolder">{{ __('web/nav.total') }}:</p>
-                <p>350.00 {{ __('web/home.pound') }}</p>
+                </div>
+            @else
+                <p>{{ __('web/nav.no_product') }}</p>
+            @endif
+            <a href="{{ route('order.checkout', $cart->id) }}"
+                class="btn nav__cart-btn text-center text-white w-100 border-0 mb-3 py-2 px-3 bg-success">
+                {{ __('web/nav.checkout') }}
+            </a>
+        @else
+            <div class="text-info">
+                no data in your cart
             </div>
-        </div>
-        <button class="nav__cart-btn text-center text-white w-100 border-0 mb-3 py-2 px-3 bg-success">{{ __('web/nav.checkout') }}</button>
-        <button class="nav__cart-btn text-center w-100 py-2 px-3 bg-transparent">{{ __('web/nav.continue_shopping') }}</button>
+        @endif
+        <a href="{{ route('products.all') }}" class="btn nav__cart-btn text-center w-100 py-2 px-3 bg-transparent">
+            {{ __('web/nav.continue_shopping') }}
+        </a>
     </div>
 </div>

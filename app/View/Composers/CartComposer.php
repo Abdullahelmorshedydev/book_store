@@ -4,25 +4,25 @@ namespace App\View\Composers;
 
 use App\Models\Cart;
 use App\Models\CartItem;
-use App\Models\Favourite;
+use App\Models\Product;
 use Illuminate\Contracts\View\View;
 
-class CountsComposer
+class CartComposer
 {
     public function compose(View $view): void
     {
-        $cart_items = [];
-        $favourites = [];
+        $products = [];
+        $cart = [];
         if (auth()->user()) {
             $cart = Cart::where('user_id', auth()->user()->id)->where('status', 'carted')->first();
             if (isset($cart)) {
                 $cart_items = CartItem::where('cart_id', $cart->id)->get();
+                foreach ($cart_items as $cart_item) {
+                    $products[] = Product::findOrFail($cart_item->product_id)->first();
+                }
             }
-            $favourites = Favourite::where('user_id', auth()->user()->id)->get();
         }
-        $cart_count = count($cart_items);
-        $fav_count = count($favourites);
-        $view->with('cart_count', $cart_count)
-            ->with('fav_count', $fav_count);
+        $view->with('products', $products)
+            ->with('cart', $cart);
     }
 }

@@ -11,5 +11,6 @@ return [
     'add_to_fav' => 'اضافة الى المفضلة',
     'description' => 'الوصف',
     'delete_from_fav' => 'ازالة من المفضلة',
+    'remove_from_cart' => 'ازالة من السلة',
     
 ];

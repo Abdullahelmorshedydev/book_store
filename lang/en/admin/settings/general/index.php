@@ -38,6 +38,7 @@ return [
     'technical_support_ar_label' => 'Technical Support In Arabic',
     'easy_exchange_en_label' => 'Easy Exchange In English',
     'easy_exchange_ar_label' => 'Easy Exchange In Arabic',
+    'tax_label' => 'Tax',
     'submit' => 'Update',
     'required_valid' => 'field is required',
     'string_valid' => 'field should be string',

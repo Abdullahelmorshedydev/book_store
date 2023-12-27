@@ -9,6 +9,7 @@ use App\Http\Controllers\Web\BranchController;
 use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\ProductController;
 use App\Http\Controllers\Web\FavouriteController;
+use App\Http\Controllers\Web\OrderController;
 use App\Http\Controllers\Web\ReturnPolicyController;
 use App\Http\Controllers\Web\PrivacyPolicyController;
 
@@ -51,12 +52,20 @@ Route::controller(AuthController::class)->prefix('/auth')->as('auth.')->group(fu
         Route::post('/register', 'register')->name('register');
     });
 
-    Route::post('/logout', 'logout')->middleware('auth')->name('logout');
+    Route::middleware('auth')->group(function () {
+
+        Route::post('/logout', 'logout')->name('logout');
+
+        Route::get('/my-acc', 'myAccount')->name('my_acc');
+        Route::put('/update-account', 'update')->name('update');
+        Route::put('/reset-password', 'resetPassword')->name('reset_password');
+    });
 });
 
 Route::controller(CartController::class)->prefix('/cart')->as('cart.')->group(function () {
 
-    Route::post('/create', 'create')->name('create');
+    Route::post('/add-to-cart/{id}', 'addToCart')->name('add.to.cart');
+    Route::post('/delete-from-cart/{id}', 'deleteItem')->name('delete.item');
 });
 
 Route::get('/privacy_policy', PrivacyPolicyController::class)->name('privacy_policy');
@@ -68,4 +77,14 @@ Route::controller(ProductController::class)->prefix('/shop')->as('products.')->g
     Route::get('/all', 'all')->name('all');
     Route::get('/category/{id}', 'categoryProducts')->name('category_products');
     Route::get('/single/{product}', 'singleProduct')->name('single_product');
+});
+
+Route::controller(OrderController::class)->prefix('/order')->as('order.')->group(function () {
+
+    Route::get('/checkout/{id}', 'checkout')->name('checkout');
+    Route::post('/store', 'store')->name('store');
+
+    Route::get('/', 'allOrders')->name('all_orders');
+    Route::get('/order-success/{order}', 'orderSuccess')->name('order_success');
+    // Route::get('/track-order/{order}', 'trackOrder')->name('track_order');
 });

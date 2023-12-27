@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Web\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\Admin\Auth\RegisterRequest;
+use App\Http\Requests\Web\ResetPasswordRequest;
+use App\Http\Requests\Web\UpdateAccountRequest;
+use Illuminate\Support\Facades\Hash;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class AuthController extends Controller
@@ -39,6 +42,26 @@ class AuthController extends Controller
     public function logout()
     {
         auth()->logout();
+        return back();
+    }
+
+    public function myAccount()
+    {
+        return view('web.auth.my_acc');
+    }
+
+    public function update(UpdateAccountRequest $request)
+    {
+        User::findOrFail(auth()->user()->id)->update($request->validated());
+        return back();
+    }
+
+    public function resetPassword(ResetPasswordRequest $request)
+    {
+        $data = $request->validated();
+        User::findOrFail(auth()->user()->id)->update([
+            'password' => Hash::make($data['new_pass']),
+        ]);
         return back();
     }
 }

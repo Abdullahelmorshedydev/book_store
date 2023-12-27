@@ -52,6 +52,7 @@ class GeneralSettingsRequest extends FormRequest
             'email' => 'required|email',
             'phone' => 'required|numeric',
             'address' => 'required|string',
+            'tax' => 'required',
         ];
     }
 
@@ -88,6 +89,7 @@ class GeneralSettingsRequest extends FormRequest
             'email.required' => __('admin/settings/general/index.required_valid'),
             'phone.required' => __('admin/settings/general/index.required_valid'),
             'address.required' => __('admin/settings/general/index.required_valid'),
+            'tax.required' => __('admin/settings/general/index.required_valid'),
             'site_name_en.string' => __('admin/settings/general/index.string_valid'),
             'site_name_ar.string' => __('admin/settings/general/index.string_valid'),
             'site_goals_en.string' => __('admin/settings/general/index.string_valid'),

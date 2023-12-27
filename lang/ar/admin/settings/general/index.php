@@ -26,6 +26,7 @@ return [
     'contact_content_en_label' => 'محتوى تواصل معنا بالانجليزية',
     'contact_title_ar_label' => 'عنوان تواصل معنا بالعربية',
     'contact_content_ar_label' => 'محتوى تواصل معنا بالعربية',
+    'tax_label' => 'الضريبة',
     'submit' => 'تعديل',
     'required_valid' => 'الحقل مطلوب',
     'string_valid' => 'الحقل يجب ان يكون نص',

@@ -358,6 +358,16 @@
                                 @error('address')
                                     <div class="text-danger">{{ $message }}</div>
                                 @enderror
+                                <div class="form-group">
+                                    <label for="tax">
+                                        {{ __('admin/settings/general/index.tax_label') }}
+                                    </label>
+                                    <input type="text" value="{{ old('tax', settings()->get('tax')) }}"
+                                        name="tax" class="form-control" id="tax">
+                                </div>
+                                @error('tax')
+                                    <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                     </div>

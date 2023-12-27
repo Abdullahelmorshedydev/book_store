@@ -26,11 +26,26 @@
                         {{ $product->price }} {{ __('web/home.save') }}
                     </span>
                 </div>
+                @if (!$is_inCart)
+                    <form action="{{ route('cart.add.to.cart', $product->id) }}" method="POST">
+                        <div class="d-flex w-100 gap-2 mb-3">
+                            @csrf
+                            <button type="submit" class="single-product__add-to-cart primary-button w-100">
+                                {{ __('web/home.add_to_cart') }}
+                            </button>
+                        </div>
+                    </form>
+                @else
+                    <form action="{{ route('cart.delete.item', $product->id) }}" method="POST">
+                        <div class="d-flex w-100 gap-2 mb-3">
+                            @csrf
+                            <button type="submit" class="single-product__add-to-cart primary-button w-100">
+                                {{ __('web/home.remove_from_cart') }}
+                            </button>
+                        </div>
+                    </form>
+                @endif
                 @auth
-                    <div class="d-flex w-100 gap-2 mb-3">
-                        <button
-                            class="single-product__add-to-cart primary-button w-100">{{ __('web/home.add_to_cart') }}</button>
-                    </div>
                     @if (empty($fav))
                         <div class="single-product__favourite d-flex align-items-center gap-2 mb-4">
                             <a href="{{ route('favourites.store', $product->id) }}">

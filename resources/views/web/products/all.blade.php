@@ -71,7 +71,7 @@
             </div>
 
             <div class="products__pagination mb-5 d-flex justify-content-center gap-2">
-                {{ $products->links() }}
+                {{-- {{ $products->links() }} --}}
             </div>
         </div>
     </div>

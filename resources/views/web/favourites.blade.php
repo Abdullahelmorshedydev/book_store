@@ -10,11 +10,11 @@
         <div class="page-top__overlay"></div>
         <div class="position-relative">
             <div class="page-top__title mb-3">
-                <h2>المفضلة</h2>
+                <h2>{{ __('web/nav.favourite') }}</h2>
             </div>
             <div class="page-top__breadcrumb">
                 <a class="text-gray" href="{{ route('index') }}">{{ __('web/nav.home') }}</a> /
-                <span class="text-gray">المفضلة</span>
+                <span class="text-gray">{{ __('web/nav.favourite') }}</span>
             </div>
         </div>
     </div>

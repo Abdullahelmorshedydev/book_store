@@ -11,5 +11,6 @@ return [
     'add_to_fav' => 'Add to favourite',
     'description' => 'Description',
     'delete_from_fav' => 'Remove from favourite',
+    'remove_from_cart' => 'Remove from cart',
     
 ];

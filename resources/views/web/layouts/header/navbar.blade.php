@@ -28,7 +28,7 @@
             @endguest
             @auth
                 <li class="nav__link">
-                    <a class="d-flex align-items-center gap-2" href="#">
+                    <a class="d-flex align-items-center gap-2" href="{{ route('auth.my_acc') }}">
                         {{ __('web/nav.my_acc') }}
                         <i class="fa-regular fa-user"></i>
                     </a>
@@ -61,14 +61,16 @@
     <div class="nav-mobile fixed-bottom d-block d-lg-none">
         <ul class="nav-mobile__list d-flex justify-content-around gap-2 list-unstyled  m-0 border-top">
             <li class="nav-mobile__link">
-                <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="{{ route('index') }}">
+                <a class="d-flex align-items-center flex-column gap-1 text-decoration-none"
+                    href="{{ route('index') }}">
                     <i class="fa-solid fa-house"></i>
                     {{ __('web/nav.home') }}
                 </a>
             </li>
             @guest
                 <li class="nav-mobile__link d-flex align-items-center flex-column gap-1">
-                    <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="{{ route('auth.index') }}">
+                    <a class="d-flex align-items-center flex-column gap-1 text-decoration-none"
+                        href="{{ route('auth.index') }}">
                         <i class="fa-regular fa-user"></i>
                         {{ __('web/nav.login') }}
                     </a>
@@ -76,7 +78,8 @@
             @endguest
             @auth
                 <li class="nav-mobile__link d-flex align-items-center flex-column gap-1">
-                    <a class="d-flex align-items-center flex-column gap-1 text-decoration-none" href="profile.html">
+                    <a class="d-flex align-items-center flex-column gap-1 text-decoration-none"
+                        href="{{ route('auth.my_acc') }}">
                         <i class="fa-regular fa-user"></i>
                         {{ __('web/nav.my_acc') }}
                     </a>
