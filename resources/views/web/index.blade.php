@@ -48,7 +48,7 @@
             @foreach ($products as $product)
                 <div class="products__item">
                     <div class="product__header mb-3">
-                        <a href="single-product.html">
+                        <a href="{{ route('products.single_product', $product->id) }}">
                             <div class="product__img-cont">
                                 <img class="product__img w-100 h-100 object-fit-cover"
                                     src="{{ asset('uploads/products/' . $product->image) }}" data-id="white">
@@ -110,7 +110,7 @@
             @foreach ($best_products as $product)
                 <div class="products__item">
                     <div class="product__header mb-3">
-                        <a href="single-product.html">
+                        <a href="{{ route('products.single_product', $product->id) }}">
                             <div class="product__img-cont">
                                 <img class="product__img w-100 h-100 object-fit-cover"
                                     src="{{ asset('uploads/products/' . $product->image) }}" data-id="white">
@@ -158,7 +158,7 @@
             @foreach ($new_products as $product)
                 <div class="products__item">
                     <div class="product__header mb-3">
-                        <a href="single-product.html">
+                        <a href="{{ route('products.single_product', $product->id) }}">
                             <div class="product__img-cont">
                                 <img class="product__img w-100 h-100 object-fit-cover"
                                     src="{{ asset('uploads/products/' . $product->image) }}" data-id="white">

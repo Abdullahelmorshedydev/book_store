@@ -30,14 +30,14 @@
                     </li>
                     <li>
                         <a class="footer__link text-decoration-none d-inline-block text-gray py-1"
-                            href="contact.html">{{ __('web/footer.contact_us') }}</a>
+                            href="{{ route('contact.index') }}">{{ __('web/footer.contact_us') }}</a>
                     </li>
                     <li>
                         <a class="footer__link text-decoration-none d-inline-block text-gray py-1"
-                            href="privacy-policy.html">{{ __('web/footer.privacy_policy') }}</a>
+                            href="{{ route('privacy_policy') }}">{{ __('web/footer.privacy_policy') }}</a>
                     </li>
                     <li><a class="footer__link text-decoration-none d-inline-block text-gray py-1"
-                            href="refund-policy.html">{{ __('web/footer.exchange_return_policy') }}</a>
+                            href="{{ route('return_policy') }}">{{ __('web/footer.exchange_return_policy') }}</a>
                     </li>
                     <li>
                         <a class="footer__link text-decoration-none d-inline-block text-gray py-1"

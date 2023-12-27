@@ -13,5 +13,9 @@ return [
     'checkout' => 'Checkout',
     'total' => 'total',
     'no_product' => 'Shopping Cart Is Empty',
+    'logout' => 'Sign out',
+    'dashboard' => 'Dashboard',
+    'shop' => 'Shop',
+    'filter' => 'Filter',
 
 ];

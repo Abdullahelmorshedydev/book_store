@@ -9,7 +9,7 @@ class CategoryComposer
 {
     public function compose(View $view): void
     {
-        $categories = Category::where('status', 'active')->get();
+        $categories = Category::where('status', 'active')->has('products')->get();
         $view->with('categories', $categories);
     }
 }

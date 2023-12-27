@@ -11,12 +11,12 @@
             <img class="w-100" src="{{ asset('web/assets/images/logo.png') }}" alt="">
         </div>
         <ul class="nav__list list-unstyled">
-            <li class="nav__link nav__side-link"><a href="shop.html"
+            <li class="nav__link nav__side-link"><a href="{{ route('products.all') }}"
                     class="py-3">{{ __('web/nav.all_categories') }}</a>
             </li>
             @foreach ($categories as $category)
                 <li class="nav__link nav__side-link">
-                    <a href="shop.html" class="py-3">{{ $category->name }}</a>
+                    <a href="{{ route('products.category_products', $category->id) }}" class="py-3">{{ $category->name }}</a>
                 </li>
             @endforeach
         </ul>

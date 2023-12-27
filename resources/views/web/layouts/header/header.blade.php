@@ -12,6 +12,18 @@
                 <i class="fa-solid fa-location-dot"></i>
                 {{ __('web/branches.branches') }}
             </a>
+            @auth
+                @if (auth()->user()->is_admin == 1)
+                    <a class="text-white text-decoration-none" href="{{ route('admin.index') }}">
+                        <i class="fa-solid fa-location-dot"></i>
+                        {{ __('web/nav.dashboard') }}
+                    </a>
+                @endif
+                <form class="text-white text-decoration-none" action="{{ route('auth.logout') }}" method="POST">
+                    @csrf
+                    <button class="btn btn-primary">{{ __('web/nav.logout') }}</button>
+                </form>
+            @endauth
         </div>
     </div>
 </header>

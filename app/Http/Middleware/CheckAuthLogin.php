@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CheckAdminMiddleware
+class CheckAuthLogin
 {
     /**
      * Handle an incoming request.
@@ -15,9 +15,9 @@ class CheckAdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user('is_admin') == 1) {
+        if(auth()->user()) {
             return $next($request);
         }
-        return redirect()->route('index');
+        return redirect()->route('auth.index');
     }
 }
